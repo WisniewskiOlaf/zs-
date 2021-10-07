@@ -1,0 +1,114 @@
+
+zadanie 1
+
+
+#include <iostream>
+
+using namespace std;
+
+class Worker
+{
+public:
+    string name,surname;
+    void get_data();
+
+};
+
+void Worker::get_data()
+{
+    cout << "imie i nazwisko "<<name<<" "<<surname;
+}
+
+
+int main()
+{
+    Worker kowalski;
+    Worker *p_kowalski;
+    p_kowalski=&kowalski;
+    cout << p_kowalski<<endl;
+    kowalski.name="janusz";
+    cout<< kowalski.name<<endl;
+    p_kowalski->name="tomasz";
+    cout << p_kowalski->name<<endl;
+    p_kowalski->surname="nowak";
+    p_kowalski->get_data();
+
+    return 0;
+}
+
+
+
+zadanie 2
+#include <iostream>
+
+using namespace std;
+
+class Worker
+{
+public:
+    string name,surname;
+    void get_data();
+
+};
+
+void Worker::get_data()
+{
+    cout << "imie i nazwisko "<<name<<" "<<surname;
+}
+
+int main()
+{
+    Worker *p_worker;
+    p_worker = new Worker();
+
+    p_worker->name="Janusz";
+    p_worker->surname="Nowak";
+
+    p_worker->get_data();
+
+
+
+
+    delete p_worker;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+zadanie 3
+#include <iostream>
+
+using namespace std;
+
+class Worker
+{
+public:
+    string name,surname;
+    void get_data();
+
+};
+
+void Worker::get_data()
+{
+    cout << "imie i nazwisko "<<name<<" "<<surname;
+}
+
+Worker& setdata(Worker);
+void getdata(const Worker&);
+
+
+int main()
+{
+    Worker worker;
+    worker=setdata(worker);
+    getdata(worker);
+// definicja funkcji zewnętrznych
+    return 0;
+}
